@@ -11,7 +11,7 @@ export class DemoawspipelineStack extends cdk.Stack {
     // The code that defines your stack goes here
     // AWS CI-CD Pipeline
 
-const democicdpipeline = new CodePipeline(this, 'democdpipeline', {
+const democicdpipeline = new CodePipeline(this, 'democicdpipeline', {
     synth: new ShellStep('Synth', {
     input: CodePipelineSource.gitHub('nittanynerd/democicd1019', 'main'),
     commands: ['npm ci', 'npm run build', 'npx cdk synth'],
