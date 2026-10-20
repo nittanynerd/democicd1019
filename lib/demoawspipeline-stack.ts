@@ -27,6 +27,8 @@ const democicdpipeline = new CodePipeline(this, 'demopipeline', {
     env: { account: '544636391340', region: 'us-east-1' },
   }));
 
+  testingStage.addPost(new ManualApprovalStep('approval'));
+
   const prodStage = democicdpipeline.addStage(new PipelineAppStage(this, 'prod', {
     env: { account: '544636391340', region: 'us-east-1' },
   }));
